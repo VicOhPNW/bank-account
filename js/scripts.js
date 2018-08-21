@@ -19,7 +19,7 @@ BankAccount.prototype.balance = function() {
 }
 
 BankAccount.prototype.addDeposit = function() {
-  return this.initialDeposit + this.deposit;
+  return this.initialDeposit + this.deposit ;
 }
 
 BankAccount.prototype.subWithdraw = function() {
@@ -39,7 +39,7 @@ $(document).ready(function(){
     var initialDeposit = parseInt($("#initialDeposit").val());
     var newUserInfo = new UserInfo(name, initialDeposit);
     var deposit = parseInt($("#deposit").val());
-    var withdraw = parseInt(-$("#withdraw").val());
+    var withdraw = parseInt($("#withdraw").val());
 
     var newBankAccount = new BankAccount(initialDeposit,deposit, withdraw);
 
@@ -56,7 +56,7 @@ $(document).ready(function(){
       $(".name1").text(newUserInfo.name);
       $(".balance1").text(newUserInfo.initialDeposit);
       $(".newBalance1").text(newBankAccount.addDeposit());
-      $(".newBalance1").text(newBankAccount.subWithdraw());
+      // $(".newBalance1").text(newBankAccount.subWithdraw());
     });
 
   });
