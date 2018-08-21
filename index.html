@@ -25,17 +25,17 @@
           <input type="text" class="form-control" id="initialDeposit" >
         </div>
 
-  <!-- <div class="depositWithdraw">
-  <h3>Deposit or Withdraw funds</h3>
-  <div class="form-group">
-    <label for="name">Deposit Amount</label>
-    <input type="text" class="form-control" id="deposit" >
-  </div>
-  <div class="form-group">
-    <label for="name">Withdrawal Amount</label>
-    <input type="text" class="form-control" id="withdraw" >
-  </div>
-</div> -->
+        <div class="depositWithdraw">
+        <h3>Deposit or Withdraw funds</h3>
+        <div class="form-group">
+          <label for="name">Deposit Amount</label>
+          <input type="text" class="form-control" id="deposit" >
+        </div>
+        <div class="form-group">
+          <label for="name">Withdrawal Amount</label>
+          <input type="text" class="form-control" id="withdraw" >
+        </div>
+      </div>
 
  <!-- <button type="submit" class="btn btn-primary" id="dw">Deposit or Withdraw</span> -->
 
@@ -43,7 +43,15 @@
       </form>
 <!-- RESULTS START HERE -->
       <div class="results">
-        <h3>Account Balance:<span class="amount"></span></h3>
+        <h3>Accounts:</h3>
+        <ul id="userName">
+        </ul>
+      </div>
+
+      <div class="showName">
+        <p>Name: <span class="name1"></span></p>
+        <p>Balance: <span class="balance1"></span></p>
+
       </div>
 
 
