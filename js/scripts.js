@@ -4,7 +4,8 @@ function UserInfo(name, initialDeposit) {
 }
 
 
-function BankAccount(deposit, withdraw) {
+function BankAccount(initialDeposit,deposit, withdraw) {
+  this.initialDeposit = initialDeposit;
   this.deposit = deposit;
   this.withdraw = withdraw;
 }
@@ -17,8 +18,12 @@ BankAccount.prototype.balance = function() {
 }
 }
 
-BankAccount.prototype.addDeposit = function(initialDeposit) {
+BankAccount.prototype.addDeposit = function() {
   return this.initialDeposit + this.deposit;
+}
+
+BankAccount.prototype.subWithdraw = function() {
+  return this.initialDeposit + this.withdraw;
 }
 
 
@@ -26,6 +31,7 @@ BankAccount.prototype.addDeposit = function(initialDeposit) {
 
 //User interface
 $(document).ready(function(){
+  var currentBalGlobal = 0;
   $("#input").submit(function(event){
     event.preventDefault();
 
@@ -35,7 +41,7 @@ $(document).ready(function(){
     var deposit = parseInt($("#deposit").val());
     var withdraw = parseInt(-$("#withdraw").val());
 
-    var newBankAccount = new BankAccount(deposit, withdraw);
+    var newBankAccount = new BankAccount(initialDeposit,deposit, withdraw);
 
     $(".amount").append(" $" + newBankAccount.addDeposit());
 
@@ -49,7 +55,8 @@ $(document).ready(function(){
       $(".showName").show();
       $(".name1").text(newUserInfo.name);
       $(".balance1").text(newUserInfo.initialDeposit);
-      $(".newBalance1").text(newBankAccount.initialDeposit);
+      $(".newBalance1").text(newBankAccount.addDeposit());
+      $(".newBalance1").text(newBankAccount.subWithdraw());
     });
 
   });
